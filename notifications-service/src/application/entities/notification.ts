@@ -68,7 +68,7 @@ export class Notification {
         return this.props.cenceledAt;
     }
 
-    public get createdAt(): Date | null | undefined {
+    public get createdAt(): Date {
         return this.props.createdAt;
     }
 

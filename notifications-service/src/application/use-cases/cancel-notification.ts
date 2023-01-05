@@ -1,7 +1,5 @@
 /* eslint-disable prettier/prettier */
 import { Injectable } from "@nestjs/common";
-import { Content } from "../entities/content";
-import { Notification } from "../entities/notification";
 import { NotificationsRepository } from "../repositories/notification-repository";
 import { NotificationNotFound } from "./errors/notification-not-found";
 
@@ -27,5 +25,7 @@ export class CancelNotification {
         }
 
         notification.cancel();
+
+        await this.notificationsRepository.save(notification);
     }
 }
